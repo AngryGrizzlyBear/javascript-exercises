@@ -22,16 +22,26 @@ const people = [
         return death - birth;
     };
 
-    const findTheOldest = function (people) {
-        return people.reduce((oldest, currentPerson) => {
-          const oldestAge = getAge(oldest.yearOfBirth, oldest.yearOfDeath);
-          const currentAge = getAge(
-            currentPerson.yearOfBirth,
-            currentPerson.yearOfDeath
-          );
-          return oldestAge < currentAge ? currentPerson : oldest;
-        });
-      };
+//     function findTheOldest(people) {
+//     people.sort((a, b) => {
+//         const lastGuy = a.yearOfBirth - a.yearOfDeath;
+//         const nextGuy = b.yearOfBirth - b.yearOfDeath;
+
+//         return lastGuy > nextGuy ? 1 : -1
+//     })
+//     return people[0]
+// };
+
+const findTheOldest = function (people) {
+    return people.reduce((oldest, currentPerson) => {
+      const oldestAge = getAge(oldest.yearOfBirth, oldest.yearOfDeath);
+      const currentAge = getAge(
+        currentPerson.yearOfBirth,
+        currentPerson.yearOfDeath
+      );
+      return oldestAge < currentAge ? currentPerson : oldest;
+    });
+  };
 
 // people.sort((a, b) => {
 //     const lastGuy = a.yearOfBirth - a.yearOfDeath;
